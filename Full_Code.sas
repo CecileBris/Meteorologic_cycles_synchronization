@@ -1,36 +1,36 @@
 
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 /* **************************** IMPORT : QBO and Meteorological stations DATA **************************** */
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
-libname memoire1 'C:\Users\ceecy\PythonScripts\Memoire\DATA' ; 
+libname memoire1 '/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA' ; 
 
 /******************** Quasi Biennial Oscillation ************************/
 proc import out = memoire1.qbo
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\DATA\qbo.csv"
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/qbo.csv"
 DBMS=CSV; run;
 
 /******************** Meteo Stations ************************/
 
 proc import out = memoire1.SINGAPORE_CHANGI 
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\DATA\SINGAPORE_CHANGI.csv"
-DMBS=CSV; run;
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/SINGAPORE_CHANGI.csv"
+DBMS=CSV; run;
 proc import out = memoire1.PAYA_LEBAR
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\DATA\PAYA_LEBAR.csv"
-DMBS=CSV; run;
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/PAYA_LEBAR.csv"
+DBMS=CSV; run;
 proc import out = memoire1.GAN_ISLAND
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\DATA\GAN_ISLAND.csv"
-DMBS=CSV; run;
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/GAN_ISLAND.csv"
+DBMS=CSV; run;
 /******* EXPORT CSV for combination of paya_lebar & singapore_changi *******/
 PROC EXPORT DATA=Memoire1.Paya_lebar
 		    DBMS=csv 
-		    OUTFILE="C:\Users\ceecy\PythonScripts\Memoire\DATA\Paya_lebar.csv"  
+		    OUTFILE="/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Paya_lebar.csv"  
 		    REPLACE;
  		    DELIMITER=",";
 run;
 PROC EXPORT DATA=Memoire1.Singapore_changi
 		    DBMS=csv 
-		    OUTFILE="C:\Users\ceecy\PythonScripts\Memoire\DATA\Singapore_chan.csv"  
+		    OUTFILE="/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Singapore_chan.csv"  
 		    REPLACE;
  		    DELIMITER=",";
 run;
@@ -41,19 +41,22 @@ for the period 1954-1981 for the precipitations // And the data of SIngapore_cha
 for the period 1981-1999 for Temp and Wind Speed ; for the periode 1981-2020 for the PRCP */
 
 proc import out = memoire1.PAYA_LEBAR_SINGA
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\DATA\Paya_lebar1.csv"
-DMBS=CSV; run;
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Paya_lebar1.csv"
+DBMS=CSV; run;
 
-/******************** Datasets dates in TMP1 ************************/
+/******************** Datasets dates ************************/
+
 proc sql outobs=815;
 	create table Memoire1.dates as 
-	select * from TMP1.dateDP ;
+	select * from Memoire1.dateDP ;
 quit; 
+
 DATA Memoire1.date ;
 set Memoire1.dates ; 
 format dateok date9. ;
 dateok = intnx("month",date, 1) ; 
 run; 
+
 /**************** Fusion of dates with QBO ****************/
 
 proc sql ;
@@ -122,9 +125,9 @@ WDSP_open, WDSP_ATT, IIIII, seventy, fifty, fourty, thirty, twenty, fifteen, ten
 quit;
 
 
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 /* ************************************* Visualisation of raw data *************************************** */
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 
 /******************** QBO_CLEAN ************************/
@@ -134,7 +137,7 @@ define statgraph sgdesign;
 dynamic _DATEOK _FIFTEEN _DATEOK2 _THIRTY _DATEOK3 _FIFTY _DATEOK4 _SEVENTY;
 begingraph / designwidth=1049 designheight=716;
    entrytitle halign=center 'Before/after compareason of the months recoding';
-   entryfootnote halign=left 'Saisissez votre note de bas de page...';
+   entryfootnote halign=left '';
    layout lattice / rowdatarange=data columndatarange=data rows=4 columns=1 rowgutter=10 columngutter=10 rowweights=(1.0 1.0 1.0 1.0) columnweights=(1.0);
       layout overlay;
          seriesplot x=_DATEOK y=_FIFTEEN / curvelabel='15hPaN Winds' name='series3' connectorder=xaxis;
@@ -164,7 +167,7 @@ define statgraph sgdesign;
 dynamic _DATE _TEMP _DATE2 _PRCP _DATE6 _WDSP _DATE7 _FRSHTT;
 begingraph / designwidth=1049 designheight=716;
    entrytitle halign=center 'Before/after compareason of the months recoding';
-   entryfootnote halign=left 'Saisissez votre note de bas de page...';
+   entryfootnote halign=left '';
    layout lattice / rowdatarange=data columndatarange=data rows=4 columns=1 rowgutter=10 columngutter=10 rowweights=(1.0 1.0 1.0 1.0) columnweights=(1.0);
       layout overlay;
          seriesplot x=_DATE y=_TEMP / curvelabel='Paya Lebar TEMPS' name='series' clusterwidth=0.5 connectorder=xaxis grouporder=data;
@@ -194,7 +197,7 @@ define statgraph sgdesign;
 dynamic _DATE _TEMP_OPEN _DATE2 _PRCP_OPEN _DATE3 _WDSP_OPEN _DATE4 _FRSH;
 begingraph / designwidth=1049 designheight=716;
    entrytitle halign=center 'Before/after compareason of the months recoding';
-   entryfootnote halign=left 'Saisissez votre note de bas de page...';
+   entryfootnote halign=left '';
    layout lattice / rowdatarange=data columndatarange=data rows=4 columns=1 rowgutter=10 columngutter=10 rowweights=(1.0 1.0 1.0 1.0) columnweights=(1.0);
       layout overlay;
          seriesplot x=_DATE y=_TEMP_OPEN / curvelabel='post-recoding temperatures' name='series' connectorder=xaxis;
@@ -224,7 +227,7 @@ define statgraph sgdesign;
 dynamic _DATEOK _FIFTEEN _DATEOK2 _THIRTY _DATEOK3 _FIFTY _DATEOK4 _SEVENTY _DATEOK5 _TEMP_OPEN _DATEOK6 _PRCP_OPEN _DATEOK7 _WDSP_OPEN _DATEOK8 _FRSH;
 begingraph / designwidth=1049 designheight=716;
    entrytitle halign=center 'Before/after compareason of the months recoding';
-   entryfootnote halign=left 'Saisissez votre note de bas de page...';
+   entryfootnote halign=left '';
    layout lattice / rowdatarange=data columndatarange=data rows=4 columns=2 rowgutter=10 columngutter=10 rowweights=(1.0 1.0 1.0 1.0) columnweights=(1.0 1.0);
       layout overlay;
          seriesplot x=_DATEOK y=_FIFTEEN / curvelabel='15hPaN Winds' name='series3' connectorder=xaxis;
@@ -261,7 +264,7 @@ run;
 
 /*****! IL Y A UN PB AVEC L'INDICE ; INDIQUER A SAS QUE L'ON VEUT UN NOMBRE ENTIER + REGARDER CE QUE L'INDICE SIGNIFIE SI ON LE MET !*****/
 
-/***** Préparation de la table pour le GRAPH SURFACE - à partir de QBO_CLEAN *****/
+/***** Prï¿½paration de la table pour le GRAPH SURFACE - ï¿½ partir de QBO_CLEAN *****/
  
 data Memoire1.QBO_heatmap; set Memoire1.QBO_clean;
 dupliq = 7; /*Number of line you need to duplicate*/
@@ -297,7 +300,7 @@ define statgraph sgdesign;
 dynamic _DATEOK _PRESSURE_HPAN _WINDSPEED;
 begingraph / designwidth=1182 designheight=480;
    entrytitle halign=center 'Equatorial Zonal Wind, Monthly Means';
-   entryfootnote halign=left 'Saisissez votre note de bas de page...';
+   entryfootnote halign=left '';
    layout lattice / rowdatarange=data columndatarange=data rowgutter=10 columngutter=10;
       layout overlay / xaxisopts=( reverse=false display=(TICKS TICKVALUES LINE ) label=('Months') timeopts=( minorticks=OFF tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(0.0 3653.0 7305.0 10958.0 14610.0 18263.0 21915.000000000004))) yaxisopts=( reverse=true linearopts=( tickvaluepriority=TRUE tickvalueformat=BEST6. tickvaluelist=(10.0 20.0 30.0 40.0 50.0 60.0 70.0)));
          contourplotparm x=_DATEOK y=_PRESSURE_HPAN z=_WINDSPEED / name='contour' contourtype=LABELEDLINEGRADIENT colormodel=ThreeColorRamp gridded=false;
@@ -321,11 +324,11 @@ if var1>239 & var1<815 ;
 /*by time;*/
 run;
 
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 /* **************************** Hodrick-prescot filter -> cycle extraction ******************************* */
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
-/***** QBO already in cycle : nothing to extract *****/
+/***** QBO already in cycle: nothing to extract *****/
 
 /******************************************************/
 /*** SIMPLE REGRESSION AND HETEROSKEDASTICITY TESTS ***/
@@ -341,7 +344,7 @@ PROC REG DATA=Memoire1.Meteo_sync;
 RUN;
 QUIT;
 PROC REG DATA=Memoire1.Meteo_sync;
-	MODEL WDSP = TEMP PRCP WDSP fifty ;
+	MODEL WDSP = TEMP PRCP twenty fifty ;
 RUN;
 QUIT;
 PROC REG DATA=Memoire1.Meteo_sync;
@@ -361,7 +364,7 @@ PROC REG DATA=Memoire1.Meteo_sync;
 	MODEL PRCP = TEMP WDSP fifty twenty  /SPEC WHITE;
 RUN;
 PROC REG DATA=Memoire1.Meteo_sync;
-	MODEL WDSP = TEMP PRCP WDSP fifty  /SPEC WHITE;
+	MODEL WDSP = TEMP PRCP twenty fifty  /SPEC WHITE;
 RUN;
 PROC REG DATA=Memoire1.Meteo_sync;
 	MODEL twenty = TEMP PRCP WDSP fifty  /SPEC WHITE;
@@ -370,22 +373,6 @@ PROC REG DATA=Memoire1.Meteo_sync;
 	MODEL fifty = PRCP WDSP TEMP twenty /SPEC WHITE;
 RUN;
 
-*heteroskedasticity and White;
-PROC REG DATA=Memoire1.Meteo_pm;
-	MODEL r_temp = r_PRCP r_WDSP r_f50 r_t20  /SPEC WHITE;
-RUN;
-PROC REG DATA=Memoire1.Meteo_pm;
-	MODEL r_PRCP = r_TEMP r_WDSP r_f50 r_t20  /SPEC WHITE;
-RUN;
-PROC REG DATA=Memoire1.Meteo_pm;
-	MODEL r_WDSP = r_TEMP r_PRCP r_WDSP r_f50 r_t20  /SPEC WHITE;
-RUN;
-PROC REG DATA=Memoire1.Meteo_pm;
-	MODEL r_t20 = r_TEMP r_PRCP r_WDSP r_f50 /SPEC WHITE;
-RUN;
-PROC REG DATA=Memoire1.Meteo_pm;
-	MODEL r_f50 = r_PRCP r_WDSP r_TEMP  r_t20/SPEC WHITE;
-RUN;
 /******************************************************/
 
 
@@ -606,10 +593,28 @@ data Memoire1.Meteo_pm ;
 merge Memoire1.Meteo_sync Memoire1.Meteo_resid  ;
 run ;
 
+/*** SIMPLE REGRESSION AND HETEROSKEDASTICITY TESTS ***/
 
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+*heteroskedasticity and White;
+PROC REG DATA=Memoire1.Meteo_pm;
+	MODEL r_temp = r_PRCP r_WDSP r_f50 r_t20  /SPEC WHITE;
+RUN;
+PROC REG DATA=Memoire1.Meteo_pm;
+	MODEL r_PRCP = r_TEMP r_WDSP r_f50 r_t20  /SPEC WHITE;
+RUN;
+PROC REG DATA=Memoire1.Meteo_pm;
+	MODEL r_WDSP = r_TEMP r_PRCP r_f50 r_t20  /SPEC WHITE;
+RUN;
+PROC REG DATA=Memoire1.Meteo_pm;
+	MODEL r_t20 = r_TEMP r_PRCP r_WDSP r_f50 /SPEC WHITE;
+RUN;
+PROC REG DATA=Memoire1.Meteo_pm;
+	MODEL r_f50 = r_PRCP r_WDSP r_TEMP  r_t20/SPEC WHITE;
+RUN;
+
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 /* *************************************** CYCLES SYNCHRONIZATION **************************************** */
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 
 /* ******************* W/ HARDING & PAGAN'S METHOD ******************* */
@@ -628,15 +633,16 @@ close;
 print MSQ;
 
 /* ************** POS = 1, NEG = 0 ************** */
-
 allq=j(nrow(msq),ncol(msq),0);/*Matrix of 0 alone : where we want to set the 0,1*/
 
 do t=1 to nrow(msq);
 do s=1 to 7;
 if msq[t,s]<0 then allq[t,s]=0; 
-if msq[t,s]>0 then allq[t,s]=1;end;
+if msq[t,s]>0 then allq[t,s]=1;
+end;	
 end;
 print allq;
+quit;
 
 proc iml;
 /********* WRITING DATA FROM METEO_SYNCHRO INTO MATRIX  "MSQ" *********/
@@ -651,20 +657,22 @@ allq=j(nrow(msq),ncol(msq),0);/*Matrix of 0 alone : where we want to set the 0,1
 
 do t=1 to nrow(msq);
 do s=1 to 7;
-if msq[t,s]<0 then allq[t,s]=0; 
-if msq[t,s]>0 then allq[t,s]=1;end;
+if msq[t,s]<0 then allq[t,s]=0;
+if msq[t,s]>0 then allq[t,s]=1;
+end;
 end;
 print allq;
 
-wa=insert(msp,allq,nrow(msp),ncol(msp)+7);
+wa=insert(msq, allq, nrow(msp), ncol(msp)+7);
 print wa;
+quit;
 
 /*** Export of WA to add it into RECESSIONS & EXPANSIONS TABLE from BCDATING in R : Exp_Rec_Pos_Neg ***/
 
 /***************************************************/
-/*PROC EXPORT DATA=Memoire1.Meteo_sync
+PROC EXPORT DATA=Memoire1.Meteo_sync
 		    DBMS=xlsx
-		    OUTFILE="C:\Users\ceecy\PythonScripts\Memoire\DATA\Meteo_sync1.xlsx"  
+		    OUTFILE="/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Meteo_sync1.xlsx"  
 		    REPLACE;
 run;
 proc timeseries data=Memoire1.Meteo_sync out=Memoire1.Meteo_ts;
@@ -672,31 +680,31 @@ var TEMP PRCP WDSP fifty twenty ;
 run;
 PROC EXPORT DATA=Memoire1.Meteo_ts
 		    DBMS=csv 
-		    OUTFILE="C:\Users\ceecy\PythonScripts\Memoire\DATA\Meteo_ts.csv"  
+		    OUTFILE="/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Meteo_ts.csv"  
 		    REPLACE;
  		    DELIMITER=",";
-run;												*/
+run;												
 /***************************************************/
 
 /*** IMPORT OF TABLES ISSUED FROM BCDATING PACKAGE (ON R) ***/
 
 proc import out = memoire1.Exp_Rec_Pos_Neg
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\DATA\EXPREC\Exp_Rec_Pos_Neg.xlsx"
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Exp_Rec_Pos_Neg.xlsx"
 DBMS=XLSX; run;
 
 proc import out = memoire1.ER
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\Scripts\BC DATING\Exp_Rec.xlsx"
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Exp_Rec.xlsx"
 DBMS=XLSX; run;
 
 proc import out = memoire1.RD
-datafile= "C:\Users\ceecy\PythonScripts\Memoire\DATA\RETOURNEMENT\Return_Dates.xlsx"
+datafile= "/home/cecilebrissard0/sasuser.v94/M1/SASS1/DATA/Return_Dates.xlsx"
 DBMS=XLSX; run;
 
 proc iml;
 /********* WRITING DATA FROM EXP_REC_POS_NEG INTO MATRIX  "EP" *********/
 
 use Memoire1.Exp_Rec_Pos_Neg; 
-read ALL var {"Phase_TEMP" "Phase_PRCP" "Phase_WDSP" "fifty" "twenty"} into EP; /***!!! NEED TO TRY THIS WITH ALL hPa !!!***/
+read ALL var {"Phase_TEMP" "Phase_PRCP" "Phase_WDSP" "fifty" "twenty"} into EP; 
 close; 
 
 print EP;
@@ -704,7 +712,7 @@ print EP;
 /********* WRITING DATA FROM ER (Expansions & Recessions) INTO MATRIX  "ER" *********/
 
 use Memoire1.ER; 
-read ALL var {"Phase_TEMP" "Phase_PRCP" "Phase_WDSP" "Phase_50" "Phase_20"} into ER; /***!!! NEED TO TRY THIS WITH ALL hPa !!!***/
+read ALL var {"Phase_TEMP" "Phase_PRCP" "Phase_WDSP" "Phase_50" "Phase_20"} into ER; 
 close; 
 
 print ER;
@@ -754,7 +762,7 @@ print RD;
 /* STEP 3: CODE P(Sx=1)=PSx1 ; P(Sy=1)=PSy1 ; P(Sx=0)=PSx0 ; P(Sy=0)=PSy0 ; P(Sx=1,Sy=1)=PSx1Sy1 ; 
    where * PSx1 - PSx1Sy1*rho - PSx1*PSy1 = 0 for SPPS 
          * (1-rho)(PSx1*PSy0) = 0 <-> rho = 1 and Ux = Uy = U when SPPS */
-/* Note that : E(x) = (matrix value n°1/575 + ... + matrix value n°575/575) */
+/* Note that : E(x) = (matrix value nï¿½1/575 + ... + matrix value nï¿½575/575) */
 
 /*STEP 4: CODE rho : rho = (PSx1Sy1 - (Psx1 * Psy1)) / (sqrt(Psx1 * Psx0) * sqrt(Psy1 * Psy0)) */
 
@@ -807,7 +815,6 @@ print PSy1;
 print PSy0;
 print PSx1Sy1;
 
-proc iml;
 M=j(nrow(ER),ncol(ER),0);
 print M; 
 SM=sum(M[,1]) ;
@@ -820,7 +827,7 @@ print SN;
 print SV;
 print SW;
 print SG;
-
+quit;
 
 /* ******************* CREATION OF TEMPO SERIES with PROC TIMESERIES ******************* */
 
@@ -888,393 +895,4 @@ run;
 data Memoire1.BarCode;
 merge memoire1.ER Memoire1.Meteo_sync;
 by dateok ; 
-run;
-
-/*ON GARDE ???????????????????????????????????????????*/
-
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
-/* *************************************** Cycles Synchronization **************************************** */
-/* §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
-
-
-/*************** CREATION OF TEMPO SERIES with PROC MODEL ***************/
-/****** ******* FOR GLOBAL SYNCHRO ******* ******/
-
-proc timeseries data=Memoire1.Meteo_pm out=Memoire1.CCMeteo_pm;
-var r_t20 r_f50 r_temp r_prcp r_wdsp ; /*choisir une ou deux altitudes de vents optimales */
-run;
-
-/* *** To calculate cross-correlation & put it in CC *** */
-
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_pm OUTCROSSCORR=Memoire1.CCTF(rename=(CCF=CCTF)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var r_temp; 
-crossvar  r_f50; /* TEMP FIFTY compareason */
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_pm OUTCROSSCORR=Memoire1.CCPF(rename=(CCF=CCPF)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var r_prcp; 
-crossvar  r_f50; /* PRCP FIFTY compareason */
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_pm OUTCROSSCORR=Memoire1.CCWF(rename=(CCF=CCWF)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var r_wdsp; 
-crossvar  r_f50; /* WDSP FIFTY compareason */
-crosscorr lag n ccf n ccfprob ;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_pm OUTCROSSCORR=Memoire1.CCPW(rename=(CCF=CCPW)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var r_prcp; 
-crossvar  r_wdsp; /* PRCP WDSP compareason */
-crosscorr lag n ccf; /*crosscorrélation, lag, nombre de donnée utilisée, ccov : crosscovariance, ccf : corrélation croisée.*/
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_pm OUTCROSSCORR=Memoire1.CCTW(rename=(CCF=CCTW)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var r_temp; 
-crossvar  r_wdsp; /* TEMP WDSP compareason */
-crosscorr lag n ccf; 
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_pm OUTCROSSCORR=Memoire1.CCPT(rename=(CCF=CCPT)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var r_prcp; 
-crossvar  r_temp; /* PRCP TEMP compareason */
-crosscorr lag n ccf; 
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_pm OUTCROSSCORR=Memoire1.CCFT(rename=(CCF=CCFT)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var r_f50; 
-crossvar  r_t20; /* fifty twenty compareason */
-crosscorr lag n ccf n ccfprob;
-run; 
-
-/*** Merge of the cross-correlations w/Proc Model ***/ /*renommer chaque cross corr avant de pouvoir merge*/
-data Memoire1.CC_pm ; 
-merge Memoire1.CCFT Memoire1.CCPW Memoire1.CCTW Memoire1.CCPT Memoire1.CCTF Memoire1.CCPF Memoire1.CCWF ; 
-by LAG ;
-drop _NAME_ _CROSS_ ;
-run ;
-
-/*************** CREATION OF TEMPO SERIES with UCM FOR GLOBAL SYNCHRO ***************/
-proc timeseries data=Memoire1.Meteo_ucm out=Memoire1.CCMeteo_ucm;
-var TEMP_smooth PRCP_smooth WDSP_smooth fifty twenty; /*choisir une ou deux altitudes de vents optimales ?? */
-run;
-/* *** To calculate cross-correlation & put it in CC *** */
-
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_ucm OUTCROSSCORR=Memoire1.CCFTucm(rename=(CCF=CCFTucm)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var fifty; 
-crossvar  twenty; /* fifty twenty compareason */
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_ucm OUTCROSSCORR=Memoire1.CCPWucm(rename=(CCF=CCPWucm)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var PRCP_smooth; 
-crossvar  WDSP_smooth; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_ucm OUTCROSSCORR=Memoire1.CCPTucm(rename=(CCF=CCPTucm)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var PRCP_smooth; 
-crossvar  TEMP_smooth; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_ucm OUTCROSSCORR=Memoire1.CCTWucm(rename=(CCF=CCTWucm)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var TEMP_smooth; 
-crossvar WDSP_smooth;
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_ucm OUTCROSSCORR=Memoire1.CCTFucm(rename=(CCF=CCTFucm)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var TEMP_smooth; 
-crossvar  fifty; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_ucm OUTCROSSCORR=Memoire1.CCWFucm(rename=(CCF=CCWFucm)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var WDSP_smooth; 
-crossvar fifty; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_ucm OUTCROSSCORR=Memoire1.CCPFucm(rename=(CCF=CCPFucm)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var PRCP_smooth; 
-crossvar fifty; 
-crosscorr lag n ccf;
-run; 
-
-/*** Merge of the cross-correlations w/UCM ***/ /*renommer chaque cross corr avant de pouvoir merge*/
-data Memoire1.CC_ucm ; 
-merge Memoire1.CCFTucm Memoire1.CCPWucm Memoire1.CCTWucm Memoire1.CCPTucm Memoire1.CCTFucm Memoire1.CCPFucm Memoire1.CCWFucm ;
-drop _NAME_ _CROSS_ ; 
-run ;
-
-/*************** CREATION OF TEMPO SERIES with EXP FOR GLOBAL SYNCHRO ***************/
-proc timeseries data=Memoire1.Meteo_pbspline out=Memoire1.CCMeteo_exp;
-var P_trend T_trend W_trend F50_trend T20_trend ; 
-run;
-/* *** To calculate cross-correlation & put it in CC *** */
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_exp OUTCROSSCORR=Memoire1.CCPWexp(rename=(CCF=CCPWexp)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var P_trend;
-crossvar W_trend; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_exp OUTCROSSCORR=Memoire1.CCTWexp(rename=(CCF=CCTWexp)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var T_trend;
-crossvar W_trend; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_exp OUTCROSSCORR=Memoire1.CCPTexp(rename=(CCF=CCPTexp)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var P_trend;
-crossvar T_trend; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_exp OUTCROSSCORR=Memoire1.CCTFexp(rename=(CCF=CCTFexp)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var T_trend;
-crossvar F50_trend; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_exp OUTCROSSCORR=Memoire1.CCPFexp(rename=(CCF=CCPFexp)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var P_trend;
-crossvar F50_trend; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_exp OUTCROSSCORR=Memoire1.CCWFexp(rename=(CCF=CCWFexp)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var W_trend;
-crossvar F50_trend; 
-crosscorr lag n ccf;
-run; 
-/***!!!***/
-proc timeseries data=Memoire1.CCMeteo_exp OUTCROSSCORR=Memoire1.CCFTexp(rename=(CCF=CCFTexp)); /* Permet de calculer la cross-correlation et la mettre dans CC */
-var F50_trend;
-crossvar T20_trend; 
-crosscorr lag n ccf;
-run; 
-/*** Merge of the cross-correlations w/EXP ***/ /*renommer chaque cross corr avant de pouvoir merge*/
-data Memoire1.CC_exp ; 
-merge Memoire1.CCFTexp Memoire1.CCPWexp Memoire1.CCTWexp Memoire1.CCPTexp Memoire1.CCTFexp Memoire1.CCPFexp Memoire1.CCWFexp ; 
-by LAG ;
-drop _NAME_ _CROSS_ ;
-run ;
-
-/*** Pour faire graphique de comparaison entre proc expand et proc model (sur les variables TEMP, PRCP, WDSP, Fifty & Twenty ***/
-data Memoire1.EM_comparaison ; 
-merge Memoire1.Meteo_pbspline Memoire1.Meteo_resid ; 
-run ;
-proc template;
-define statgraph Graph3;
-dynamic _DATEOK _F50_CYCLE _DATEOK2 _R_F50A _DATEOK3 _T_CYCLE _DATEOK4 _R_TEMP _DATEOK5 _DATEOK6 _R_PRCP2 _P_CYCLE _DATEOK7 _R_WDSP _DATEOK8 _W_CYCLE _DATEOK9 _R_T20A _DATEOK10 _T20_CYCLE;
-begingraph / designwidth=945 designheight=674;
-   layout lattice / rowdatarange=data columndatarange=data rows=3 columns=2 rowgutter=10 columngutter=10 rowweights=(1.0 1.0 1.0) columnweights=(1.0 1.0);
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 50hPa'));
-         seriesplot x=_DATEOK y=_F50_CYCLE / name='series' legendlabel='PROC EXPAND' connectorder=xaxis lineattrs=(color=CX5A518C );
-         seriesplot x=_DATEOK2 y=_R_F50A / name='series2' legendlabel='PROC MODEL' connectorder=xaxis lineattrs=(color=CX639A21 );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12783.999999999998 14610.0 16437.0 18263.0 20089.0 21914.999999999996))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Precipitations'));
-         seriesplot x=_DATEOK5 y=_P_CYCLE / name='series5' connectorder=xaxis lineattrs=(color=CX5A518C );
-         seriesplot x=_DATEOK6 y=_R_PRCP2 / name='series6' legendlabel='r_prcp' connectorder=xaxis lineattrs=(color=CX639A21 );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Temperatures'));
-         seriesplot x=_DATEOK3 y=_T_CYCLE / name='series3' connectorder=xaxis lineattrs=(color=CX5A518C );
-         seriesplot x=_DATEOK4 y=_R_TEMP / name='series4' legendlabel='r_temp' connectorder=xaxis lineattrs=(color=CX639A21 );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12783.999999999998 14610.0 16437.0 18263.0 20089.0 21914.999999999996))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds'));
-         seriesplot x=_DATEOK7 y=_R_WDSP / name='series7' legendlabel='r_wdsp' connectorder=xaxis lineattrs=(color=CX639A21 );
-         seriesplot x=_DATEOK8 y=_W_CYCLE / name='series8' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 20hPa'));
-         seriesplot x=_DATEOK9 y=_R_T20A / name='series9' connectorder=xaxis lineattrs=(color=CX639A21 );
-         seriesplot x=_DATEOK10 y=_T20_CYCLE / name='series10' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay;
-         entry _id='dropsite4' halign=center '(drop a plot here...)' / valign=center;
-      endlayout;
-      sidebar / align=bottom spacefill=false;
-         discretelegend 'series' 'series2' / opaque=true border=true halign=center valign=center displayclipped=true order=rowmajor;
-      endsidebar;
-   endlayout;
-endgraph;
-end;
-run;
-
-proc sgrender data=MEMOIRE1.EM_COMPARAISON template=Graph3;
-dynamic _DATEOK="DATEOK" _F50_CYCLE="'F50_CYCLE'n" _DATEOK2="DATEOK" _R_F50A="'R_F50'n" _DATEOK3="DATEOK" _T_CYCLE="'T_CYCLE'n" _DATEOK4="DATEOK" _R_TEMP="'R_TEMP'n" _DATEOK5="DATEOK" _DATEOK6="DATEOK" _R_PRCP2="'R_PRCP'n" _P_CYCLE="'P_CYCLE'n" _DATEOK7="DATEOK" _R_WDSP="'R_WDSP'n" _DATEOK8="DATEOK" _W_CYCLE="'W_CYCLE'n" _DATEOK9="DATEOK" _R_T20A="'R_T20'n" _DATEOK10="DATEOK" _T20_CYCLE="'T20_CYCLE'n";
-run;
-
-
-/*** Pour faire graphique de comparaison entre proc ucm et proc expand (sur la variable TEMPS) ***/
-data Memoire1.HP_comparaison ; 
-merge Memoire1.Meteo_pbspline Memoire1.Meteo_ucmcyc ; 
-run ;
-proc template;
-define statgraph sgdesign;
-dynamic _DATEOK _F50_SMOOTH _DATEOK2 _F50_CYCLE _DATEOK3 _T20_SMOOTH _DATEOK4 _T20_CYCLE _DATEOK5 _PRCP_SMOOTH _DATEOK6 _P_CYCLE _DATEOK7 _WDSP_SMOOTH _DATEOK8 _W_CYCLE _DATEOK9 _TEMP_SMOOTH _DATEOK10 _T_CYCLE;
-begingraph / designwidth=1142 designheight=680;
-   entryfootnote halign=left ' ';
-   layout lattice / rowdatarange=data columndatarange=data rows=3 columns=2 rowgutter=10 columngutter=10 rowweights=(1.0 1.0 1.0) columnweights=(1.0 1.0);
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 50hPa'));
-         seriesplot x=_DATEOK y=_F50_SMOOTH / name='series' legendlabel='PROC UCM' connectorder=xaxis lineattrs=(color=CXFFCB63 );
-         seriesplot x=_DATEOK2 y=_F50_CYCLE / name='series2' legendlabel='PROC EXPAND' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Precipitations'));
-         seriesplot x=_DATEOK5 y=_PRCP_SMOOTH / name='series5' legendlabel='PRCP_smooth' connectorder=xaxis lineattrs=(color=CXFFCB63 );
-         seriesplot x=_DATEOK6 y=_P_CYCLE / name='series6' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 20hPa'));
-         seriesplot x=_DATEOK3 y=_T20_SMOOTH / name='series3' legendlabel='T20_smooth' connectorder=xaxis lineattrs=(color=CXFFCB63 );
-         seriesplot x=_DATEOK4 y=_T20_CYCLE / name='series4' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind-speeds'));
-         seriesplot x=_DATEOK7 y=_WDSP_SMOOTH / name='series7' legendlabel='WDSP_smooth' connectorder=xaxis lineattrs=(color=CXFFCB63 );
-         seriesplot x=_DATEOK8 y=_W_CYCLE / name='series8' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Temperatures'));
-         seriesplot x=_DATEOK9 y=_TEMP_SMOOTH / name='series9' connectorder=xaxis lineattrs=(color=CXFFCB63 );
-         seriesplot x=_DATEOK10 y=_T_CYCLE / name='series10' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay;
-         entry _id='dropsite4' halign=center '(drop a plot here...)' / valign=center;
-      endlayout;
-      sidebar / align=bottom spacefill=false;
-         discretelegend 'series' 'series2' / opaque=true border=true halign=center valign=center displayclipped=true order=rowmajor;
-      endsidebar;
-   endlayout;
-endgraph;
-end;
-run;
-
-proc sgrender data=MEMOIRE1.HP_COMPARAISON template=sgdesign;
-dynamic _DATEOK="DATEOK" _F50_SMOOTH="'F50_SMOOTH'n" _DATEOK2="DATEOK" _F50_CYCLE="'F50_CYCLE'n" _DATEOK3="DATEOK" _T20_SMOOTH="'T20_SMOOTH'n" _DATEOK4="DATEOK" _T20_CYCLE="'T20_CYCLE'n" _DATEOK5="DATEOK" _PRCP_SMOOTH="'PRCP_SMOOTH'n" _DATEOK6="DATEOK" _P_CYCLE="'P_CYCLE'n" _DATEOK7="DATEOK" _WDSP_SMOOTH="'WDSP_SMOOTH'n" _DATEOK8="DATEOK" _W_CYCLE="'W_CYCLE'n" _DATEOK9="DATEOK" _TEMP_SMOOTH="'TEMP_SMOOTH'n" _DATEOK10="DATEOK" _T_CYCLE="'T_CYCLE'n";
-run;
-
-proc template;
-define statgraph sgdesign;
-dynamic _DATEOK _F50_TREND _DATEOK2 _F50_CYCLE _DATEOK3 _FIFTY _DATEOK4 _PRCP _DATEOK5 _P_CYCLE _DATEOK6 _P_TREND _DATEOK7 _DATEOK8 _DATEOK9 _DATEOK10 _WDSP _DATEOK11 _W_TREND _DATEOK12 _W_CYCLE _TWENTY _T20_CYCLE _T20_TREND;
-begingraph / designwidth=1122 designheight=716;
-   entryfootnote halign=left ' ';
-   layout lattice / rowdatarange=data columndatarange=data rows=2 columns=2 rowgutter=10 columngutter=10 rowweights=(1.0 1.0) columnweights=(1.0 1.0);
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 20hPa'));
-         seriesplot x=_DATEOK7 y=_TWENTY / name='series7' legendlabel='SERIES' datatransparency=0.77 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK8 y=_T20_CYCLE / name='series8' legendlabel='PROC EXPAND CYCLES' connectorder=xaxis lineattrs=(color=CX5A518C );
-         seriesplot x=_DATEOK9 y=_T20_TREND / name='series9' legendlabel='TRENDS' connectorder=xaxis;
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds'));
-         seriesplot x=_DATEOK10 y=_WDSP / name='series10' datatransparency=0.74 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK11 y=_W_TREND / name='series11' connectorder=xaxis;
-         seriesplot x=_DATEOK12 y=_W_CYCLE / name='series12' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( minorticks=OFF tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 50hPa'));
-         seriesplot x=_DATEOK y=_F50_TREND / name='series' connectorder=xaxis;
-         seriesplot x=_DATEOK2 y=_F50_CYCLE / name='series2' connectorder=xaxis lineattrs=(color=CX5A518C );
-         seriesplot x=_DATEOK3 y=_FIFTY / name='series3' datatransparency=0.75 connectorder=xaxis lineattrs=(color=CXCE5539 );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Precipitations'));
-         seriesplot x=_DATEOK4 y=_PRCP / name='series4' datatransparency=0.66 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK5 y=_P_CYCLE / name='series5' connectorder=xaxis lineattrs=(color=CX5A518C );
-         seriesplot x=_DATEOK6 y=_P_TREND / name='series6' connectorder=xaxis lineattrs=(thickness=1 );
-      endlayout;
-      sidebar / align=bottom spacefill=false;
-         discretelegend 'series7' 'series8' 'series9' / opaque=true border=true halign=center valign=center displayclipped=true order=rowmajor;
-      endsidebar;
-   endlayout;
-endgraph;
-end;
-run;
-
-proc sgrender data=MEMOIRE1.METEO_PBSPLINE template=sgdesign;
-dynamic _DATEOK="DATEOK" _F50_TREND="'F50_TREND'n" _DATEOK2="DATEOK" _F50_CYCLE="'F50_CYCLE'n" _DATEOK3="DATEOK" _FIFTY="FIFTY" _DATEOK4="DATEOK" _PRCP="PRCP" _DATEOK5="DATEOK" _P_CYCLE="'P_CYCLE'n" _DATEOK6="DATEOK" _P_TREND="'P_TREND'n" _DATEOK7="DATEOK" _DATEOK8="DATEOK" _DATEOK9="DATEOK" _DATEOK10="DATEOK" _WDSP="WDSP" _DATEOK11="DATEOK" _W_TREND="'W_TREND'n" _DATEOK12="DATEOK" _W_CYCLE="'W_CYCLE'n" _TWENTY="TWENTY" _T20_CYCLE="'T20_CYCLE'n" _T20_TREND="'T20_TREND'n";
-run;
-proc template;
-define statgraph sgdesign;
-dynamic _DATEOK13 _TEMP _DATEOK15 _T_TREND _DATEOK _T_CYCLE;
-begingraph / designwidth=1122 designheight=407;
-   entryfootnote halign=left ' ';
-   layout lattice / rowdatarange=data columndatarange=data rows=1 columns=2 rowgutter=10 columngutter=10 rowweights=(1.0) columnweights=(1.0 1.0);
-      layout overlay / xaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Temperatures'));
-         seriesplot x=_DATEOK13 y=_TEMP / name='series13' legendlabel='SERIE' datatransparency=0.71 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK15 y=_T_TREND / name='series15' connectorder=xaxis;
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.000000000004 21915.0))) yaxisopts=( label=('Temperatures'));
-         seriesplot x=_DATEOK y=_T_CYCLE / name='series' legendlabel='PROC MODEL CYCLE' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      sidebar / align=bottom spacefill=false;
-         discretelegend 'series13' 'series' / opaque=true border=true halign=center valign=center displayclipped=true;
-      endsidebar;
-   endlayout;
-endgraph;
-end;
-run;
-
-proc sgrender data=MEMOIRE1.HP_COMPARAISON template=sgdesign;
-dynamic _DATEOK13="DATEOK" _TEMP="TEMP" _DATEOK15="DATEOK" _T_TREND="'T_TREND'n" _DATEOK="DATEOK" _T_CYCLE="'T_CYCLE'n";
-run;
-
-proc template;
-define statgraph sgdesign;
-dynamic _DATEOK13 _TEMP _DATEOK15 _T_TREND _DATEOK _T_CYCLE _DATEOK2 _PRCP _DATEOK3 _P_TREND _DATEOK4 _P_CYCLE _DATEOK5 _WDSP _DATEOK6 _W_TREND _DATEOK7 _W_CYCLE;
-begingraph / designwidth=1122 designheight=739;
-   entryfootnote halign=left ' ';
-   layout lattice / rowdatarange=data columndatarange=data rows=2 columns=2 rowgutter=10 columngutter=10 rowweights=(1.0 1.0) columnweights=(1.0 1.0);
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( label=('Precipitations'));
-         seriesplot x=_DATEOK2 y=_PRCP / name='series2' datatransparency=0.75 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK3 y=_P_TREND / name='series3' legendlabel='TRENDS' connectorder=xaxis;
-         seriesplot x=_DATEOK4 y=_P_CYCLE / name='series4' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( label=('Wind speeds'));
-         seriesplot x=_DATEOK5 y=_WDSP / name='series5' datatransparency=0.75 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK6 y=_W_TREND / name='series6' connectorder=xaxis;
-         seriesplot x=_DATEOK7 y=_W_CYCLE / name='series7' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Temperatures'));
-         seriesplot x=_DATEOK13 y=_TEMP / name='series13' legendlabel='SERIES' datatransparency=0.71 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK15 y=_T_TREND / name='series15' connectorder=xaxis;
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.000000000004 21915.0))) yaxisopts=( label=('Temperatures'));
-         seriesplot x=_DATEOK y=_T_CYCLE / name='series' legendlabel='PROC MODEL CYCLES' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      sidebar / align=bottom spacefill=false;
-         discretelegend 'series13' 'series' 'series3' / opaque=true border=true halign=center valign=center displayclipped=true order=rowmajor;
-      endsidebar;
-   endlayout;
-endgraph;
-end;
-run;
-
-proc sgrender data=MEMOIRE1.HP_COMPARAISON template=sgdesign;
-dynamic _DATEOK13="DATEOK" _TEMP="TEMP" _DATEOK15="DATEOK" _T_TREND="'T_TREND'n" _DATEOK="DATEOK" _T_CYCLE="'T_CYCLE'n" _DATEOK2="DATEOK" _PRCP="PRCP" _DATEOK3="DATEOK" _P_TREND="'P_TREND'n" _DATEOK4="DATEOK" _P_CYCLE="'P_CYCLE'n" _DATEOK5="DATEOK" _WDSP="WDSP" _DATEOK6="DATEOK" _W_TREND="'W_TREND'n" _DATEOK7="DATEOK" _W_CYCLE="'W_CYCLE'n";
-run;
-proc template;
-define statgraph sgdesign;
-dynamic _DATEOK7 _DATEOK8 _DATEOK9 _DATEOK11 _TWENTY _T20_CYCLE _T20_TREND _FIFTY2 _DATEOK10 _F50_TREND2 _DATEOK12 _F50_CYCLE2;
-begingraph / designwidth=1122 designheight=418;
-   entryfootnote halign=left ' ';
-   layout lattice / rowdatarange=data columndatarange=data rows=1 columns=2 rowgutter=10 columngutter=10 rowweights=(1.0) columnweights=(1.0 1.0);
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 50hPa'));
-         seriesplot x=_DATEOK11 y=_FIFTY2 / name='series11' datatransparency=0.75 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK10 y=_F50_TREND2 / name='series10' connectorder=xaxis;
-         seriesplot x=_DATEOK12 y=_F50_CYCLE2 / name='series12' connectorder=xaxis lineattrs=(color=CX5A518C );
-      endlayout;
-      layout overlay / xaxisopts=( label=('Months') timeopts=( tickvaluepriority=TRUE tickvalueformat=YEAR4. tickvaluelist=(5479.0 7305.0 9132.0 10958.0 12784.0 14610.0 16437.0 18263.0 20089.0 21915.0))) yaxisopts=( display=(TICKS TICKVALUES LINE LABEL ) label=('Wind speeds at 20hPa'));
-         seriesplot x=_DATEOK7 y=_TWENTY / name='series7' legendlabel='SERIES' datatransparency=0.77 connectorder=xaxis lineattrs=(color=CXCE5539 );
-         seriesplot x=_DATEOK8 y=_T20_CYCLE / name='series8' legendlabel='PROC EXPAND CYCLES' connectorder=xaxis lineattrs=(color=CX5A518C );
-         seriesplot x=_DATEOK9 y=_T20_TREND / name='series9' legendlabel='TRENDS' connectorder=xaxis;
-      endlayout;
-      sidebar / align=bottom spacefill=false;
-         discretelegend 'series7' 'series8' 'series9' / opaque=true border=true halign=center valign=center displayclipped=true order=rowmajor;
-      endsidebar;
-   endlayout;
-endgraph;
-end;
-run;
-
-proc sgrender data=MEMOIRE1.METEO_PBSPLINE template=sgdesign;
-dynamic _DATEOK7="DATEOK" _DATEOK8="DATEOK" _DATEOK9="DATEOK" _DATEOK11="DATEOK" _TWENTY="TWENTY" _T20_CYCLE="'T20_CYCLE'n" _T20_TREND="'T20_TREND'n" _FIFTY2="FIFTY" _DATEOK10="DATEOK" _F50_TREND2="'F50_TREND'n" _DATEOK12="DATEOK" _F50_CYCLE2="'F50_CYCLE'n";
 run;
